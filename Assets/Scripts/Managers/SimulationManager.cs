@@ -9,6 +9,8 @@ public class SimulationManager : MonoBehaviour
 
     // Simulation Settings [TODO: Add in enum for different types of distributions for objects]
     public float numTrees = 100;
+    public float numShrubs = 100; 
+
     public float minXBound;
     public float maxXBound;
     public float minYBound;

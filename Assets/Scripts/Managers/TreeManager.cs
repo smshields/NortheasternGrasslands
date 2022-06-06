@@ -29,14 +29,17 @@ public class TreeManager : MonoBehaviour
         for(float i = numTrees; i > 0; i--) 
         {
             //TODO: fix Z number hardcoding
-            Tree tree = Instantiate(treePrefab, 
-                new Vector3
+            Tree tree = Instantiate
                 (
+                treePrefab, 
+                new Vector3
+                    (
                     Random.Range(this.simulationManager.minXBound, this.simulationManager.maxXBound),
                     Random.Range(this.simulationManager.minYBound, this.simulationManager.maxYBound),
                     0.3f
-                ), 
-                Quaternion.identity);
+                    ), 
+                Quaternion.identity
+                );
             tree.transform.SetParent(this.transform);
         }
     }
