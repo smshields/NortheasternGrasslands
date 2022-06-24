@@ -215,7 +215,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 155920886}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0.16}
+  m_LocalPosition: {x: 0, y: 0, z: 0.1}
   m_LocalScale: {x: 0.5, y: 0.01, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -234,6 +234,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c1adca6ca12fd0428c8bf1347fe099a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  changeInterval: 0
+  nextTime: 0
+  grassPrefab: {fileID: 0}
   simulationManager: {fileID: 0}
   minHeight: 0
   maxHeight: 0
@@ -241,6 +244,7 @@ MonoBehaviour:
   maxRadius: 0
   verticalGrowthRate: 0
   horizontalGrowthRate: 0
+  reproductionRate: 0
   reproductionRadius: 0
   requireParents: 0
   pollinationRadius: 0
