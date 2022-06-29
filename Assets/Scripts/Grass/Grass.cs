@@ -11,9 +11,6 @@ public class Grass : MonoBehaviour
     //Prefab Reference
     public Grass grassPrefab;
 
-    //Simulation references
-    public SimulationManager simulationManager;
-
     //Growth Details
     public float minHeight; //smallest height the grass can be
     public float maxHeight; //largest height the grass can be
@@ -42,6 +39,10 @@ public class Grass : MonoBehaviour
         this.maxRadius = 2f;
         this.horizontalGrowthRate = 0.1f;
         this.verticalGrowthRate = 0.1f;
+
+        //Reproduction settings
+        this.reproductionRate = 1f;
+        this.reproductionRadius = 25f;
     
     }
 
@@ -57,6 +58,13 @@ public class Grass : MonoBehaviour
         //Every second, check for changes
         if (Time.time >= this.nextTime) 
         {
+            //roll a random chance, if it's above the reproductionRate, reproduce
+            float reproductionChance = Random.Range(0f, 100f);
+            if (reproductionChance <= this.reproductionRate) 
+            {
+                this.Reproduce();
+            }
+
             this.GrowHorizontal();
             this.GrowVertical();
 
@@ -83,8 +91,14 @@ public class Grass : MonoBehaviour
     }
 
     //Create a new grass instance somewhere nearby. TODO: Parent implementation?
-    Grass Reproduce() 
+    void Reproduce() 
     {
-        return null;
+        //Pick random spot within reproduction radius
+        Vector3 newGrassPosition = this.transform.position + ((Vector3)(Random.insideUnitCircle * this.reproductionRadius));
+        
+        SimulationManager.instance.grassManager.AddGrass(newGrassPosition);
+
+        //TODO: We should eventually check for shrub/tree intersections. None for now
+        
     }
 }

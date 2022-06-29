@@ -27,7 +27,7 @@ public class ShrubManager : MonoBehaviour
                     (
                         Random.Range(this.simulationManager.minXBound, this.simulationManager.maxXBound),
                         Random.Range(this.simulationManager.minYBound, this.simulationManager.maxYBound),
-                        0.3f
+                        1.0f
                     ),
                 Quaternion.identity
                 );
@@ -40,4 +40,6 @@ public class ShrubManager : MonoBehaviour
     {
         
     }
+
+    // TODO: Create factory method
 }

@@ -6,6 +6,14 @@ using UnityEngine.UI;
 
 public class SimulationManager : MonoBehaviour
 {
+    //Instance Management
+    public static SimulationManager instance;
+
+    //Managers
+    public GrassManager grassManager;
+    public ShrubManager shrubManager;
+    public TreeManager treeManager;
+
     //Timer Setup
     public float fixedDeltaTime; 
     public float timeScale; //Ratio of realtime to simulation time
@@ -26,6 +34,17 @@ public class SimulationManager : MonoBehaviour
 
     void Awake() 
     {
+        //Instantiate class as singleton.
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else if (instance != this) 
+        {
+            Destroy(this.gameObject);
+        }
+        DontDestroyOnLoad(this.gameObject);
+
         //Instantiate Timer with a scalar. 1f is real time, 0f is paused, 2f is double.
         this.fixedDeltaTime = Time.fixedDeltaTime;
         this.time = 0f;
