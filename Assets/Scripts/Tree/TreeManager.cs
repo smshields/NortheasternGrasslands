@@ -36,7 +36,7 @@ public class TreeManager : MonoBehaviour
                     (
                     Random.Range(this.simulationManager.minXBound, this.simulationManager.maxXBound),
                     Random.Range(this.simulationManager.minYBound, this.simulationManager.maxYBound),
-                    0.3f
+                    1f
                     ), 
                 Quaternion.identity
                 );

@@ -24,8 +24,9 @@ public class SimulationManager : MonoBehaviour
     public BoxCollider grasslandFloorCol;
 
     // Simulation Settings [TODO: Add in enum for different types of distributions for objects]
-    public float numTrees = 100;
-    public float numShrubs = 100; 
+    public float numTrees = 100f;
+    public float numShrubs = 100f;
+    public float numStartingGrass = 50f;
 
     public float minXBound;
     public float maxXBound;

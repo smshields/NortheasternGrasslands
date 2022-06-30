@@ -32,7 +32,7 @@ public class Grass : MonoBehaviour
     {
         //Update grass every second
         this.changeInterval = 1f;
-        this.nextTime = 0f; 
+        this.nextTime = SimulationManager.instance.time; 
 
         //TODO: Cleanup, this is for testing
         this.maxHeight = 3f;
@@ -41,7 +41,7 @@ public class Grass : MonoBehaviour
         this.verticalGrowthRate = 0.1f;
 
         //Reproduction settings
-        this.reproductionRate = 1f;
+        this.reproductionRate = 5f;
         this.reproductionRadius = 25f;
     
     }

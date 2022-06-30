@@ -247,6 +247,7 @@ MonoBehaviour:
   grasslandFloorCol: {fileID: 591064612}
   numTrees: 100
   numShrubs: 100
+  numStartingGrass: 50
   minXBound: 0
   maxXBound: 0
   minYBound: 0
@@ -295,8 +296,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c69f2cb4299be848972bc459c676e50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  simulationManager: {fileID: 0}
+  simulationManager: {fileID: 228884905}
   grassPrefab: {fileID: 4720684505623347548, guid: 92cee9332e60074499710d3e6916d7e0, type: 3}
+  numStartingGrass: 0
 --- !u!4 &279252234
 Transform:
   m_ObjectHideFlags: 0
